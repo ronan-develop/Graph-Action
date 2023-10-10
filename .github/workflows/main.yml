@@ -1,6 +1,8 @@
 # .github/workflows/main.yml
 
-on: push
+on:
+  schedule:
+  - cron: '0 12 * * *'
 
 jobs:
   backfill-commits:
@@ -15,3 +17,4 @@ jobs:
         MAX_DAYS: 365
         MIN_COMMITS_PER_DAY: 5
         MAX_COMMITS_PER_DAY: 15
+        INCLUDE_WEEKENDS: true
